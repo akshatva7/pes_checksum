@@ -5,7 +5,7 @@ module pes_checksum_tb;
 reg [31:0] data;
 wire [15:0] checksum;
 
-checksum DUT(data, checksum);
+pes_checksum DUT(data, checksum);
 
 /* Clock */
 reg clk;
