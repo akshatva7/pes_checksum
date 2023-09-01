@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module checksum(data, checksum);
+module pes_checksum(data, checksum);
 
 input [31:0] data;
 output [15:0] checksum;
