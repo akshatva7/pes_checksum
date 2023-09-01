@@ -1,6 +1,6 @@
 `timescale 1 ns / 1 ns
 
-module checksum_tb;
+module pes_checksum_tb;
 
 reg [31:0] data;
 wire [15:0] checksum;
