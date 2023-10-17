@@ -39,3 +39,8 @@ The IPv4 checksum is primarily intended to check the integrity of the header inf
 3. **Not Secure**: It's not designed for security; it only detects unintentional errors, not deliberate attacks or tampering.
 
 ## Applications
+
+
+![Screenshot from 2023-10-17 22-25-39](https://github.com/akshatva7/pes_checksum/assets/135726741/4d75dc4c-a14f-4abb-99ac-3b9aacdd6335)
+
+
