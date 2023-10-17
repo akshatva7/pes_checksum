@@ -23,3 +23,19 @@ The IPv4 checksum works by calculating a checksum value for the header of an IPv
 5. Verification at the Receiver: When the packet arrives at its destination, the receiver calculates the checksum in the same way, which includes adding up all the 16-bit words in the header and taking the one's complement sum. If the calculated checksum matches the value in the header, it means there were no errors in the header during transmission, and the packet is considered valid. If the values don't match, it indicates an error in the header, and the packet may be discarded.
 
 The IPv4 checksum is primarily intended to check the integrity of the header information, ensuring that important routing and control information is correctly received. It does not provide end-to-end data integrity for the entire packet's payload. Higher-layer protocols, like TCP or UDP, have their own checksums to verify the integrity of data in the payload. This combination of checksums helps ensure the overall reliability of data transmission in IPv4 networks.
+
+## Advantages of the IPv4 checksum:
+
+1. **Header Integrity**: It ensures the integrity of the header in IPv4 packets, verifying essential routing and control information.
+
+2. **Simplicity**: The checksum calculation is straightforward and efficient, adding minimal overhead to the packet processing.
+
+## Disadvantages of the IPv4 checksum:
+
+1. **Limited Error Detection**: It only checks the header's integrity, not the payload. Errors in the data payload may go undetected.
+
+2. **No Error Correction**: While it can detect errors, it can't correct them. Discarded packets require retransmission, potentially leading to network congestion.
+
+3. **Not Secure**: It's not designed for security; it only detects unintentional errors, not deliberate attacks or tampering.
+
+## Applications
