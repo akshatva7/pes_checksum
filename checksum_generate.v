@@ -1,11 +1,14 @@
-module _8bitchecksum(data,checksum);
+module bitchecksum(data,clk,checksum);
+    input wire clk;
     input wire [31:0]data;
     output reg [7:0]checksum;
 
     reg overflow;
     reg sum;
 
-    always@* begin
+    
+    always@ (posedge clk)
+    begin
         {overflow,sum}=data[15:8]+data[7:0];
         sum=sum+overflow;
 
