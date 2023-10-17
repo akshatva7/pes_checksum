@@ -40,7 +40,59 @@ The IPv4 checksum is primarily intended to check the integrity of the header inf
 
 ## Applications
 
+The IPv4 checksum is primarily used to ensure the integrity of the header information in IPv4 packets. Its applications include:
 
+1. **Error Detection:** Detecting errors or corruption in the IPv4 header during transmission, helping to maintain the reliability of network routing and control information.
+
+2. **Packet Filtering:** Firewalls and network security devices can use the checksum to filter out potentially malicious or malformed packets based on header integrity.
+
+3. **Network Troubleshooting:** It aids in diagnosing network issues by identifying header errors, allowing network administrators to pinpoint and address problems.
+
+4. **Quality of Service (QoS):** Ensuring that critical header information, like the time-to-live (TTL), is correct for maintaining proper network QoS and routing decisions.
+
+5. **Packet Forwarding:** Routers use the checksum to validate and forward packets accurately through the network.
+
+These applications collectively contribute to the reliable and error-free operation of IPv4 networks.
+
+## Simulation
+
+```sh
+iverilog checksum_tb.v
+./a.out
+gtkwave checksum.vcd
+
+```
+![Screenshot from 2023-10-17 23-47-24](https://github.com/akshatva7/pes_checksum/assets/135726741/df25428b-1565-4ae9-b74b-e1b143a7aea5)
+
+![Screenshot from 2023-10-17 23-46-32](https://github.com/akshatva7/pes_checksum/assets/135726741/cd8411e2-303e-417d-9ff6-4c1a6b1f12ce)
+
+### GTK waveform
+![Screenshot from 2023-10-17 23-49-32](https://github.com/akshatva7/pes_checksum/assets/135726741/71c06132-587b-4e6b-8dc2-9fe787c68b4a)
+
+## Synthesis
+
+- Invoke ```yosys```
+![Screenshot from 2023-10-17 22-27-52](https://github.com/akshatva7/pes_checksum/assets/135726741/8eea29ce-22ad-47fc-8256-e3aeca7dbaec)
+ 
+- ```read_liberty -lib /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_0235C_1v80.lib```
+![Screenshot from 2023-10-17 22-28-22](https://github.com/akshatva7/pes_checksum/assets/135726741/19f52f2f-0dec-458b-a683-ad6fc58fc514)
+
+- ```read_verilog checksum_generate.v```
+- ```synth -top checksum_generate```
+![Screenshot from 2023-10-17 22-28-22](https://github.com/akshatva7/pes_checksum/assets/135726741/ee4c479e-09ff-4d3f-95db-1e88dec022b7)
+
+- ```synth -top bitchecksum```
+- ``` flatten```
+![Screenshot from 2023-10-17 22-30-21](https://github.com/akshatva7/pes_checksum/assets/135726741/e6777fc8-73b1-433f-925a-29caddc6ec6d)
+![Screenshot from 2023-10-17 22-29-20](https://github.com/akshatva7/pes_checksum/assets/135726741/74238e3a-03a7-4a26-8603-8fb0b7599368)
+
+- ```show bitchecksum```
+![Screenshot from 2023-10-18 00-01-18](https://github.com/akshatva7/pes_checksum/assets/135726741/0ee69f92-4466-41c7-be54-7dd05fedb375)
+
+The followinfg files were saved in the working directory
+![Screenshot from 2023-10-17 23-46-32](https://github.com/akshatva7/pes_checksum/assets/135726741/f0230315-4b07-47b7-b66c-81b1e9c68236)
+
+### Final chart
 ![Screenshot from 2023-10-17 22-25-39](https://github.com/akshatva7/pes_checksum/assets/135726741/4d75dc4c-a14f-4abb-99ac-3b9aacdd6335)
 
 
