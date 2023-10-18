@@ -99,9 +99,12 @@ The followinfg files were saved in the working directory
 ## Gate Level Simulation
 We check the design obtained by NETLIST file generated and verify the gate level simulation
 
-- ```iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_pwm_netlist.v pes_pwm_tb.v```
+- ```iverilog /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v pes_checksum.v checksum_tb.v```
 - ```./a.out```
-- ```gtkwave pwm.vcd```
+- ```gtkwave checksum.vcd```
+![Screenshot from 2023-10-18 20-29-52](https://github.com/akshatva7/pes_checksum/assets/135726741/9ca8a97f-f829-4d6f-868f-995114f73b8f)
+![Screenshot from 2023-10-18 20-29-25](https://github.com/akshatva7/pes_checksum/assets/135726741/f461265c-977a-41dd-84b7-6938a8b98e4e)
+
 
 
 
