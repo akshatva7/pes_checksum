@@ -81,11 +81,12 @@ gtkwave checksum.vcd
 - ```synth -top checksum_generate```
 ![Screenshot from 2023-10-17 22-28-22](https://github.com/akshatva7/pes_checksum/assets/135726741/ee4c479e-09ff-4d3f-95db-1e88dec022b7)
 
-- ```synth -top bitchecksum```
+- ```dfflibmap -liberty /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_0235C_1v80.lib```
+- ``` abc -liberty /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_0235C_1v80.lib```
 - ``` flatten```
 ![Screenshot from 2023-10-17 22-30-21](https://github.com/akshatva7/pes_checksum/assets/135726741/e6777fc8-73b1-433f-925a-29caddc6ec6d)
 ![Screenshot from 2023-10-17 22-29-20](https://github.com/akshatva7/pes_checksum/assets/135726741/74238e3a-03a7-4a26-8603-8fb0b7599368)
-
+- Extract the NETLIST by using ``` write_verilog pes_checksum.v```
 - ```show bitchecksum```
 ![Screenshot from 2023-10-18 00-01-18](https://github.com/akshatva7/pes_checksum/assets/135726741/0ee69f92-4466-41c7-be54-7dd05fedb375)
 
@@ -94,5 +95,14 @@ The followinfg files were saved in the working directory
 
 ### Final chart
 ![Screenshot from 2023-10-17 22-25-39](https://github.com/akshatva7/pes_checksum/assets/135726741/4d75dc4c-a14f-4abb-99ac-3b9aacdd6335)
+
+## Gate Level Simulation
+We check the design obtained by NETLIST file generated and verify the gate level simulation
+
+- ```iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v pes_pwm_netlist.v pes_pwm_tb.v```
+- ```./a.out```
+- ```gtkwave pwm.vcd```
+
+
 
 
