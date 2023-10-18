@@ -102,9 +102,9 @@ We check the design obtained by NETLIST file generated and verify the gate level
 - ```iverilog /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/primitives.v /home/akshatva/vsd/sky130RTLDesignAndSynthesisWorkshop/my_lib/verilog_model/sky130_fd_sc_hd.v pes_checksum.v checksum_tb.v```
 - ```./a.out```
 - ```gtkwave checksum.vcd```
-![Screenshot from 2023-10-18 20-29-52](https://github.com/akshatva7/pes_checksum/assets/135726741/9ca8a97f-f829-4d6f-868f-995114f73b8f)
 ![Screenshot from 2023-10-18 20-29-25](https://github.com/akshatva7/pes_checksum/assets/135726741/f461265c-977a-41dd-84b7-6938a8b98e4e)
 
+![Screenshot from 2023-10-18 20-29-52](https://github.com/akshatva7/pes_checksum/assets/135726741/9ca8a97f-f829-4d6f-868f-995114f73b8f)
 
 
 
